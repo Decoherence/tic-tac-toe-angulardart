@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TartAngular</title>
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/foundation.min.css">
+<link rel="stylesheet" href="css/theme.css">
+
+<!-- Font Awesome & Google Font -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round'
+  rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="mathead fixed">
+    <div class="row">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name">
+            <h1>
+              <a href="#">Chris Lynch</a>
+            </h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
+        <!-- /.title-area -->
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <!-- /.right -->
+        </section>
+        <!-- /.top-bar-section -->
+      </nav>
+      <!-- /.top-bar -->
+    </div>
+    <!-- /.row -->
+  </header>
+  <!-- /.masthead -->
+  <!-- TOP BAR -->
+  <!-- INTRO -->
+
+
+  <div class="portfolio-wrapper">
+    <div class="row">
+      <div
+        class="small-9 small-centered medium-9 medium-centered columns">
+        <h3>Tic-Tac-Toe</h3>
+        <div class="line"></div>
+        <div class="clearfix"></div>
+        <br>
+      </div>
+    </div>
+
+    <!--
+   Note: toString() is needed to force redraw as Dart/Angular only
+   monitors a reference change, not each individual object
+   -->
+    <div game>
+
+      <div class="row">
+        <div
+          class="small-12 small-centered medium-6 medium-centered large-4 large-centered columns">
+          <ul class="small-block-grid-3">
+            <li ng-repeat="cell in ctrl.board"
+              ng-click="ctrl.cellClicked($index)" class="cell">
+              <!--
+                Note: toString() is needed to force redraw as Dart/Angular only
+                monitors a reference change, not each individual object
+             --> {{cell.toString()}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p></p>
+      <div class="row">
+        <div class="small-6 small-centered columns">
+          <div class="panel callout radius text-center">
+            {{ctrl.game_status}} <br> <a href="#"
+              ng-click="ctrl.reset()">Reset</a>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <p class="text-center">Lovingly crafted with AngularDart</p>
+      <img src="images/logo.png" width="200px" height="200px">
+    </div>
+  </div>
+
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-wrapper">
+    <div class="clearfix"></div>
+    <div class="row margin-top">
+      <div class="medium-12 columns">
+        <h3>Stay In Touch!</h3>
+        <div class="line"></div>
+        <div class="clearfix"></div>
+        <ul class="social-icon">
+          <li><a href="#" class="twitter"><i
+              class="fa fa-twitter"></i></a></li>
+          <li><a href="#" class="google-plus"><i
+              class="fa fa-google-plus"></i></a></li>
+          <li><a href="#" class="github"><i
+              class="fa fa-github"></i></a></li>
+        </ul>
+        <!-- /.social-icon -->
+      </div>
+    </div>
+
+    <!-- /.row -->
+
+    <div class="row" id="lets-talk">
+      <div class="medium-12 columns">
+        <h3>Let's Talk</h3>
+        <div class="line"></div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <!-- /.medium-12 .columns -->
+    <div class="row">
+      <div class="medium-3 columns">&nbsp;</div>
+      <!-- /.medium-3 .columns -->
+      <div class="medium-6 columns">
+        <form class="contact-form">
+          <div class="input-item">
+            <label>Name <span class="required">*</span></label> <input
+              type="text" placeholder="Full name">
+          </div>
+          <!-- /.input-item -->
+          <div class="input-item">
+            <label>Email <span class="required">*</span></label> <input
+              type="email" placeholder="Email address">
+          </div>
+          <!-- /.input-item -->
+          <div class="input-item">
+            <label>Messages <span class="required">*</span></label>
+            <textarea cols="10" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <!-- /.input-item -->
+          <div class="input-item text-center">
+            <input class="button small success radius" type="submit"
+              value="Submit">
+          </div>
+          <!-- /.input-item -->
+        </form>
+        <!-- /.contact-form -->
+      </div>
+      <!-- /.medium-6 .columns -->
+      <div class="medium-3 columns">&nbsp;</div>
+      <!-- /.medium-3 .columns -->
+    </div>
+    <!-- /.row -->
+    </div>
+    <!-- /.medium-12 .columns -->
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- /.contact-wrapper -->
+  <!-- CONTACT -->
+
+  <!-- FOOTER -->
+  <footer class="copy">
+    <div class="row">
+      <div class="medium-12 columns">Chris Lynch</div>
+      <!-- /.medium-12 .columns -->
+    </div>
+    <!-- /.row -->
+  </footer>
+  <!-- /.copy -->
+  <!-- FOOTER -->
+
+  <script type="application/dart" src="ttt.dart"></script>
+  <script src="packages/browser/dart.js"></script>
+</body>
+</html>
